@@ -1,3 +1,4 @@
+from django.core.checks import messages
 import tutorials
 from django.http import request
 from django.shortcuts import render
@@ -32,7 +33,25 @@ def tutorial_list(request):
             return JsonResponse(tutorial_serializer.data, status = status.HTTP_201_CREATED)
         return JsonResponse(tutorial_serializer.errors, status = status.HTTP_400_BAD_REQUEST)
     
-    elif request.method == 
+    elif request.method == 'DELETE':
+        count = Tutorial.objects.all().delete()
+        return JsonResponse({'message': '{} Tutorials were deleted succesfully'.format(count[0])}, status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET', 'POST','DELETE'])
+def tutorial_detail(request, pk):
+    try:
+        tutorial = Tutorial.objects.get(pk=pk)
+    except Tutorial.DoesNotExist:
+        return JsonResponse({'message': "The tutorial does not exist!"}, status = status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        tutorial_serializer = TutorialSerializer(tutorial)
+        return JsonResponse(tutorial_serializer.data)
+
+    elif request.method == 'PUT':
+        tutorial_data = JSONParser  
+
+
 
 
 
