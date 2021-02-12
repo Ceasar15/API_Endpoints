@@ -8,6 +8,7 @@ class TutorialSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'title',
-            'description'
+            'description',
+            'published',
         )
 
