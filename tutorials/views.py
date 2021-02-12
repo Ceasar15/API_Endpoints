@@ -34,7 +34,7 @@ def tutorial_list(request):
         count = Tutorial.objects.all().delete()
         return JsonResponse({'message': '{} Tutorials were deleted succesfully'.format(count[0])}, status=status.HTTP_204_NO_CONTENT)
 
-@api_view(['GET', 'POST','DELETE'])
+@api_view(['GET', 'PUT','DELETE'])
 def tutorial_detail(request, pk):
     try:
         tutorial = Tutorial.objects.get(pk=pk)
@@ -51,7 +51,7 @@ def tutorial_detail(request, pk):
         if tutorial_serializer.is_valid():
             tutorial_serializer.save()
             return JsonResponse(tutorial_serializer.data)
-        return JsonResponse(tutorial_serializer.error, status=status.HTTP_400_BAD_REQUEST)
+        return JsonResponse(tutorial_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
     elif request.method == 'DELETE':
         tutorial.delete()
