@@ -53,7 +53,13 @@ def tutorial_detail(request, pk):
         tutorial_serializer = TutorialSerializer(tutorial, data=tutorial_data)
         if tutorial_serializer.is_valid():
             tutorial_serializer.save()
-            return JsonResponse()
+            return JsonResponse(tutorial_serializer.data)
+        return JsonResponse(tutorial_serializer.error, status=status.HTTP_400_BAD_REQUEST)
+    
+    elif request.method == 'DELETE':
+        tutorial.delete()
+        return JsonResponse({'message': 'Tutorial was deleted successfully!'}, status = status.HTTP_204_NO_CONTENT)
+        
 
 
 
