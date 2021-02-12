@@ -1,6 +1,3 @@
-from django.core.checks import messages
-import tutorials
-from django.http import request
 from django.shortcuts import render
 from django.http.response import JsonResponse
 from rest_framework.parsers import JSONParser
@@ -66,12 +63,6 @@ def tutorial_list_published(request):
 
     if request.method == 'GET':
         tutorials_serializer = TutorialSerializer(tutorials, many=True)
-        return JsonResponse(tutorials_serializer.data, )
-
-
-
-
-
-
+        return JsonResponse(tutorials_serializer.data, safe=False)
 
 
