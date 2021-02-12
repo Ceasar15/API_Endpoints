@@ -49,7 +49,7 @@ def tutorial_detail(request, pk):
         return JsonResponse(tutorial_serializer.data)
 
     elif request.method == 'PUT':
-        tutorial_data = JSONParser  
+        tutorial_data = JSONParser()  
 
 
 
