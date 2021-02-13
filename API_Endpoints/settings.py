@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'tutorials.apps.TutorialsConfig',
     #Cors Headers
     'corsheaders',
-    #
+    #Tickets
+    'tickets',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +135,11 @@ CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:8081',
 )
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+      'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
