@@ -20,4 +20,6 @@ from django.conf.urls import url, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^', include('tutorials.urls')),
+    url(r'^', include('tickets.urls')),
+    path(r'api/', include('rest_framework.urls', namespace='rest_framework'))
 ]
