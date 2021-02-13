@@ -6,4 +6,5 @@ from tickets.models import Ticket, Category
 
 admin.site.register(Ticket)
 
-admin
+admin.site.register(Category)
+
