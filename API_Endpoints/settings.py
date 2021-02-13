@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'tutorials.apps.TutorialsConfig',
     #Cors Headers
     'corsheaders',
+    #
 ]
 
 MIDDLEWARE = [
