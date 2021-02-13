@@ -11,7 +11,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 class TicketSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = User
+        model = Ticket
         fields = ('id', 'title', 'ticket_id', 'user', 'content', 'category', 'created', 'modified')
 
 class CategorySerializer(serializers.HyperlinkedModelSerializer):
