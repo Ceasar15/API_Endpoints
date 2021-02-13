@@ -4,4 +4,8 @@ from tickets.serializers import UserSerializer, TicketSerializer, CategorySerial
 from django.contrib.auth.models import User
 from tickets.models import Ticket, Category
 
+
 # Create your views here.
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
