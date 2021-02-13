@@ -12,4 +12,5 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
 class TicketViewSet(viewsets.ModelViewSet):
-    
+    queryset = Ticket.objects.all()
+    serializer_class = TicketSerializer
