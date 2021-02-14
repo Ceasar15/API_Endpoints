@@ -96,7 +96,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'api_endpoints',
         'USER': 'bookmarks',
+        'PASSWORD': 'edem1234',
+        'HOST': 'localhost',
         
+
     }
 }
 
