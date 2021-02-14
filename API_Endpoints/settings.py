@@ -98,7 +98,8 @@ DATABASES = {
         'USER': 'bookmarks',
         'PASSWORD': 'edem1234',
         'HOST': 'localhost',
-        
+        'POST': '',
+
 
     }
 }
