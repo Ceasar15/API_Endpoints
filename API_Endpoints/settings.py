@@ -99,8 +99,6 @@ DATABASES = {
         'PASSWORD': 'edem1234',
         'HOST': 'localhost',
         'POST': '',
-
-
     }
 }
 
