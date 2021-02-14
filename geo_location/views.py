@@ -7,10 +7,10 @@ import json
 
 def home(request):
     response = requests.get('http://freegeoip.net/json').json()
-    geodata = response.json()
+#    geodata = response.json()
     context = {
-        'ip': geodata['ip'],
-        'country': geodata['country_name']
+        'ip': response['ip'],
+        'country': response['country_name']
     }
     return render(request, 'core/home', context)
 
