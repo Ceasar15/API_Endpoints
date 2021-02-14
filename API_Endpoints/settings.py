@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'corsheaders',
     #Tickets
     'tickets',
+    #Geo Locatiom
+    'geo_location',
 ]
 
 MIDDLEWARE = [

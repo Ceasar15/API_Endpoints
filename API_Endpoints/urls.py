@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^', include('tutorials.urls')),
     url(r'^', include('tickets.urls')),
+    url(r'^', include('geo_location.urls')),
     path(r'api/', include('rest_framework.urls', namespace='rest_framework'))
 ]
