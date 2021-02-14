@@ -6,7 +6,7 @@ import requests
 
 def home(request):
     response = requests.get('http://freegeoip.net/json/')
-    geodata = response.json()
+    geodata = response.t
     context = {
         'ip': geodata['ip'],
         'country': geodata['country_name']
