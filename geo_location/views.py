@@ -12,5 +12,5 @@ def home(request):
         'ip': geodata['ip'],
         'country': geodata['country_name']
     }
-    return render(request, 'core/home', context)
+    return render(request, 'geo_location/home', context)
 
