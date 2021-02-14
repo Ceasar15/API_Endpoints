@@ -93,7 +93,10 @@ WSGI_APPLICATION = 'API_Endpoints.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql'
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'api_endpoints',
+        'USER': 'bookmarks',
+        
     }
 }
 
