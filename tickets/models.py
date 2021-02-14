@@ -5,8 +5,8 @@ from django.utils.text import slugify
 
 # Create your models here.
 
-def generate_ticket_id():
-    return str(uuid.uuid()).split("-")[-1]
+# def generate_ticket_id():
+#     return str(uuid.uuid()).split("-")[-1]
 
 class Ticket(models.Model):
     title = models.CharField(max_length=255)
