@@ -38,4 +38,6 @@ class Category(models.Model):
     
     def save(self, *args, **kwargs):
         value = self.name
-        self.slug = slugify
+        self.slug = slugify(value=value, allow_unicode=True)
+        super().save(*args, **kwargs)
+        
