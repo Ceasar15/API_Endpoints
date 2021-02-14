@@ -5,7 +5,7 @@ import requests
 # Create your views here.
 
 def home(request):
-    response = requests.get('http://freegeoip.net/json/')
+    response = requests.get('http://freegeoip.net/json')
     geodata = response.json()
     context = {
         'ip': geodata['ip'],
