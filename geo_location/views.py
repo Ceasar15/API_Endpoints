@@ -6,11 +6,11 @@ import json
 # Create your views here.
 
 def home(request):
-    response = requests.get('http://freegeoip.net/json').json()
-#    geodata = response.json()
+    response = requests.get('http://freegeoip.app/json')
+    geodata = response.json()
     context = {
-        'name': response['name'],
-        'country': response['country_name']
+        'ip': geodata['ip'],
+        'country': geodata['country_name']
     }
-    return render(request, 'core/home', context)
+    return render(request, 'geo_location/core/home', context)
 
