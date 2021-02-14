@@ -1,6 +1,7 @@
 from django.db import models
 import uuid
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 
 # Create your models here.
 
@@ -30,7 +31,11 @@ class Ticket(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=200)
-    slug = models.SlugField()
+    slug = models.SlugField(default='', editable=False)
 
     def __str__(self):
         return self.name
+    
+    def save(self, *args, **kwargs):
+        value = self.name
+        self.slug = slugify
