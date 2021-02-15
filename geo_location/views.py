@@ -10,7 +10,9 @@ def home(request):
     geodata = response.json()
     context = {
         'ip': geodata['ip'],
-        'country': geodata['country_name']
+        'country': geodata['country_name'],
+        'city': geodata['city'],
+        'region_name': geodata['region_name']
     }
-    return render(request, 'geo_location/home', context)
+    return render(request, 'geo_location/home.html', context)
 
