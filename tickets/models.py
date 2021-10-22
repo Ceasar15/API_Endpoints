@@ -5,10 +5,8 @@ from django.utils.text import slugify
 
 # Create your models here.
 
-# def generate_ticket_id():
-#     return str(uuid.uuid()).split("-")[-1]
-
 class Ticket(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
@@ -21,16 +19,12 @@ class Ticket(models.Model):
     def __str__(self):
         return "{} - {}".format(self.title, self.ticket_id)
     
-    # def save(self, *args, **kwargs):
-    #     if len(self.ticket_id.strip(" ")) == 0:
-    #         self.ticket_id = generate_ticket_id()
-        
-    #     super(Ticket, self).save(*args, **kwargs) # The real save() button
 
     class Meta:
         ordering = ["-created"]
 
 class Category(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
     slug = models.SlugField(default='', editable=False)
 
