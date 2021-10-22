@@ -166,8 +166,13 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
       'rest_framework.permissions.IsAuthenticated'
-    ]
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.Authentication.SessionAuthentication',
+        'rest_framework.Authentication.BasicAuthentication'
+    ],
 }
+
 
 # REST REGISTRATION CONFIG
 REST_REGISTRATION = {
