@@ -6,7 +6,7 @@ from rest_framework import status, viewsets, generics
 
 from rest_framework.decorators import api_view
 
-from ..users.serializers import UserSerializer
+from .serializers import UserSerializer
 # from users.models import Profile
 # from users.serializers import ProfileSerialzer
 from rest_framework.views import APIView
@@ -15,7 +15,14 @@ from rest_framework.authentication import SessionAuthentication, TokenAuthentica
 # Create your views here.
 
 
+class UserList(generics.ListCreateAPIView):
+    queryset = get_user_model().objects.all()
+    serializer_class = UserSerializer
 
+
+class UserDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = get_user_model().objects.all()
+    serializer_class = UserSerializer
 
 # @api_view(['GET'])
 # def profile(request):
