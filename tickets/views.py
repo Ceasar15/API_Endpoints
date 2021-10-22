@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import generics, routers, serializers, viewsets
+from rest_framework import generics, routers, serializers, viewsets, permissions
 from tickets.serializers import UserSerializer, TicketSerializer, CategorySerializer
 from django.contrib.auth.models import User
 from tickets.models import Ticket, Category
