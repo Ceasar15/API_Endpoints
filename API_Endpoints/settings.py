@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
     #DJango RestFramework
     'rest_framework',
+    'rest_framework.authtoken',
     #Django Rest Registration
     'rest_registration',
     #Tutorial 
@@ -169,7 +170,7 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.Authentication.SessionAuthentication',
-        'rest_framework.Authentication.BasicAuthentication'
+        'rest_framework.Authentication.TokenAuthentication'
     ],
 }
 
