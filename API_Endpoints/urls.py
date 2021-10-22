@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^', include('users.urls')),
     url(r'^', include('geo_location.urls')),
     path(r'api/', include('rest_framework.urls', namespace='rest_framework')),
-    path('api/auth/', include('rest_auth.urls'))
+    path('api/auth/', include('rest_auth.urls')),
+    path('api/auth/reg/', include('rest_auth.registration.urls'))
 ]

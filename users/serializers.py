@@ -1,7 +1,13 @@
 from rest_framework import serializers
 from rest_framework.fields import ReadOnlyField
 from users.models import Profile
+from django.contrib.auth import get_user_model
 
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = get_user_model()
+        fields = ('id', 'username', 'email')
 
 class ProfileSerialzer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)

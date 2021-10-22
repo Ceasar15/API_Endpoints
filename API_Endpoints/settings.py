@@ -48,9 +48,15 @@ INSTALLED_APPS = [
     #DJango RestFramework
     'rest_framework',
     'rest_framework.authtoken',
-    'rest_auth',
-    #Django Rest Registration
-    'rest_registration',
+    #Django rest registration
+    'rest_auth',    
+    #All auth 
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'rest_auth.registration',
+
     #Tutorial 
     'tutorials.apps.TutorialsConfig',
     #Cors Headers
@@ -157,6 +163,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 # CORS SETTINGS
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
@@ -176,11 +184,6 @@ REST_FRAMEWORK = {
 }
 
 
-# REST REGISTRATION CONFIG
-REST_REGISTRATION = {
-    'REGISTER_VERIFICATION_ENABLED': False,
-    'RESET_PASSWORD_VERIFICATION_ENABLED': False,
-    'REGISTER_EMAIL_VERIFICATION_ENABLED': False,
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-    'VERIFICATION_FROM_EMAIL': "no-reply@gmail.com",
-}
+SITE_ID = 1
