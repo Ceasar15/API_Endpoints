@@ -56,8 +56,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'rest_auth.registration',
-    #Swagger Docs
-    'rest_framework_swagger',
 
     #Tutorial 
     'tutorials.apps.TutorialsConfig',
