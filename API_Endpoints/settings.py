@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     #DJango RestFramework
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_auth',
     #Django Rest Registration
     'rest_registration',
     #Tutorial 
